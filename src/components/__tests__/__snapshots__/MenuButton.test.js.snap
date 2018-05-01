@@ -1,0 +1,92 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MenuButton should renders default 1`] = `
+<MenuButton
+  isOpen={false}
+>
+  <styled.svg>
+    <svg
+      className="sc-bdVaJa dPqvbs"
+    >
+      <styled.line
+        innerRef={
+          Object {
+            "current": <line
+              class="sc-bwzfXH iEmkta"
+              x1="4px"
+              y1="8px"
+              x2="28px"
+              y2="8px"
+          />,
+          }
+        }
+        key="0"
+        x1="4px"
+        x2="28px"
+        y1="8px"
+        y2="8px"
+      >
+        <line
+          className="sc-bwzfXH iEmkta"
+          x1="4px"
+          x2="28px"
+          y1="8px"
+          y2="8px"
+        />
+      </styled.line>
+      <styled.line
+        innerRef={
+          Object {
+            "current": <line
+              class="sc-bwzfXH iEmkta"
+              x1="4px"
+              y1="16px"
+              x2="28px"
+              y2="16px"
+          />,
+          }
+        }
+        key="1"
+        x1="4px"
+        x2="28px"
+        y1="16px"
+        y2="16px"
+      >
+        <line
+          className="sc-bwzfXH iEmkta"
+          x1="4px"
+          x2="28px"
+          y1="16px"
+          y2="16px"
+        />
+      </styled.line>
+      <styled.line
+        innerRef={
+          Object {
+            "current": <line
+              class="sc-bwzfXH iEmkta"
+              x1="4px"
+              y1="24px"
+              x2="28px"
+              y2="24px"
+          />,
+          }
+        }
+        key="2"
+        x1="4px"
+        x2="28px"
+        y1="24px"
+        y2="24px"
+      >
+        <line
+          className="sc-bwzfXH iEmkta"
+          x1="4px"
+          x2="28px"
+          y1="24px"
+          y2="24px"
+        />
+      </styled.line>
+    </svg>
+  </styled.svg>
+</MenuButton>
+`;
