@@ -1,3 +1,5 @@
+import { split, slice, join, compose } from "lodash/fp";
+
 /**
  * Format amount to currency format
  *
@@ -5,3 +7,17 @@
  */
 export const toCurrency = (amount = 0) =>
   amount.toLocaleString("en-US", { maximumSignificantDigits: 3 });
+
+/**
+ * Cut text to make an excerpt
+ *
+ * @param {number} totalWords - Total words you want to get
+ * @param {number} words - Words you want to cut
+ * @returns
+ */
+export const cutText = (totalWords, words) => {
+  const cut = compose(join(" "), slice(0, totalWords), split(" "));
+  const result = `${cut(words)}...`;
+
+  return result;
+};
