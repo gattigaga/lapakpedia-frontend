@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SearchBar should renders default 1`] = `
+<styled.input
+  onChange={[Function]}
+  onKeyPress={[Function]}
+  placeholder="Search Products"
+  type="text"
+/>
+`;
