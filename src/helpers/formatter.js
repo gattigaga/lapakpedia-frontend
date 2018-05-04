@@ -21,3 +21,11 @@ export const cutText = (totalWords, words) => {
 
   return result;
 };
+
+/**
+ * Capitalize first character in a word
+ *
+ * @param {any} words - Words you want to capitalize
+ */
+export const capitalize = words =>
+  words.replace(/\b\w/g, firstChar => firstChar.toUpperCase());

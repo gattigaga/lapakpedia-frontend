@@ -1,4 +1,4 @@
-import { toCurrency, cutText } from "helpers/formatter";
+import { toCurrency, cutText, capitalize } from "helpers/formatter";
 
 describe("toCurrency()", () => {
   it("should returns formatted default value", () => {
@@ -20,6 +20,15 @@ describe("cutText()", () => {
   it("should returns cutted text", () => {
     const result = cutText(3, "[PRE-OWNED] MacBook Pro 2018");
     const expected = "[PRE-OWNED] MacBook Pro...";
+
+    expect(result).toEqual(expected);
+  });
+});
+
+describe("capitalize()", () => {
+  it("should returns capitalized word", () => {
+    const result = capitalize("macbook pro");
+    const expected = "Macbook Pro";
 
     expect(result).toEqual(expected);
   });
