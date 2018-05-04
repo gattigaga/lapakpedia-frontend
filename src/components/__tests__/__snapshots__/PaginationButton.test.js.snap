@@ -1,0 +1,188 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PaginationButton should renders as disabled 1`] = `
+<Link
+  replace={false}
+  to="#"
+>
+  <styled.svg
+    isDisabled={true}
+    onMouseEnter={[Function]}
+    onMouseLeave={[Function]}
+  >
+    <styled.rect
+      isDisabled={true}
+    />
+    <styled.line
+      innerRef={
+        Object {
+          "current": null,
+        }
+      }
+      key="0"
+      x1="87%"
+      x2="80%"
+      y1="50%"
+      y2="35%"
+    />
+    <styled.line
+      innerRef={
+        Object {
+          "current": null,
+        }
+      }
+      key="1"
+      x1="87%"
+      x2="65%"
+      y1="50%"
+      y2="50%"
+    />
+    <styled.line
+      innerRef={
+        Object {
+          "current": null,
+        }
+      }
+      key="2"
+      x1="87%"
+      x2="80%"
+      y1="50%"
+      y2="65%"
+    />
+    <styled.text
+      innerRef={
+        Object {
+          "current": null,
+        }
+      }
+      isDisabled={true}
+      x="50%"
+      y="52%"
+    >
+      Next
+    </styled.text>
+  </styled.svg>
+</Link>
+`;
+
+exports[`PaginationButton should renders default 1`] = `
+<Link
+  replace={false}
+  to="#"
+>
+  <styled.svg
+    onMouseEnter={[Function]}
+    onMouseLeave={[Function]}
+  >
+    <styled.rect />
+    <styled.line
+      innerRef={
+        Object {
+          "current": null,
+        }
+      }
+      key="0"
+      x1="87%"
+      x2="80%"
+      y1="50%"
+      y2="35%"
+    />
+    <styled.line
+      innerRef={
+        Object {
+          "current": null,
+        }
+      }
+      key="1"
+      x1="87%"
+      x2="65%"
+      y1="50%"
+      y2="50%"
+    />
+    <styled.line
+      innerRef={
+        Object {
+          "current": null,
+        }
+      }
+      key="2"
+      x1="87%"
+      x2="80%"
+      y1="50%"
+      y2="65%"
+    />
+    <styled.text
+      innerRef={
+        Object {
+          "current": null,
+        }
+      }
+      x="50%"
+      y="52%"
+    >
+      Next
+    </styled.text>
+  </styled.svg>
+</Link>
+`;
+
+exports[`PaginationButton should renders in type 'prev' 1`] = `
+<Link
+  replace={false}
+  to="#"
+>
+  <styled.svg
+    onMouseEnter={[Function]}
+    onMouseLeave={[Function]}
+  >
+    <styled.rect />
+    <styled.line
+      innerRef={
+        Object {
+          "current": null,
+        }
+      }
+      key="0"
+      x1="13%"
+      x2="20%"
+      y1="50%"
+      y2="35%"
+    />
+    <styled.line
+      innerRef={
+        Object {
+          "current": null,
+        }
+      }
+      key="1"
+      x1="13%"
+      x2="35%"
+      y1="50%"
+      y2="50%"
+    />
+    <styled.line
+      innerRef={
+        Object {
+          "current": null,
+        }
+      }
+      key="2"
+      x1="13%"
+      x2="20%"
+      y1="50%"
+      y2="65%"
+    />
+    <styled.text
+      innerRef={
+        Object {
+          "current": null,
+        }
+      }
+      x="50%"
+      y="52%"
+    >
+      Prev
+    </styled.text>
+  </styled.svg>
+</Link>
+`;
