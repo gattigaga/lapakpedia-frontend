@@ -13,6 +13,7 @@ const StyledButton = styled.button`
   cursor: pointer;
   transition: all 0.15s ease-in;
   letter-spacing: 0.1em;
+  width: ${props => (props.isFullWidth ? "100%" : "auto")};
 
   &:hover {
     background: ${props => (props.isOutlined ? "black" : "white")};
@@ -20,9 +21,14 @@ const StyledButton = styled.button`
   }
 `;
 
-const Button = ({ caption, type, onClick, href, isOutlined }) => {
+const Button = ({ caption, type, onClick, href, isOutlined, isFullWidth }) => {
   const button = (
-    <StyledButton type={type} onClick={onClick} isOutlined={isOutlined}>
+    <StyledButton
+      type={type}
+      onClick={onClick}
+      isOutlined={isOutlined}
+      isFullWidth={isFullWidth}
+    >
       {caption}
     </StyledButton>
   );
@@ -35,7 +41,8 @@ Button.propTypes = {
   type: PropTypes.string,
   onClick: PropTypes.func,
   href: PropTypes.string,
-  isOutlined: PropTypes.bool
+  isOutlined: PropTypes.bool,
+  isFullWidth: PropTypes.bool
 };
 
 Button.defaultProps = {

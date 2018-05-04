@@ -7,25 +7,3 @@ exports[`Button should renders default 1`] = `
   Button
 </styled.button>
 `;
-
-exports[`Button should renders with custom type, caption and outline mode 1`] = `
-<styled.button
-  isOutlined={true}
-  type="submit"
->
-  Login
-</styled.button>
-`;
-
-exports[`Button should renders with link 1`] = `
-<Link
-  replace={false}
-  to="https://github.com"
->
-  <styled.button
-    type="button"
-  >
-    Button
-  </styled.button>
-</Link>
-`;

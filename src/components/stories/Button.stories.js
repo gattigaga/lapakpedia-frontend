@@ -15,4 +15,5 @@ storiesOf("Button", module)
     <Button caption="Login" onClick={onClick} />
   ))
   .add("with outline", () => <Button onClick={onClick} isOutlined />)
-  .add("with link", () => <Button href="https://github.com" />);
+  .add("with link", () => <Button href="https://github.com" />)
+  .add("in full width", () => <Button onClick={onClick} isFullWidth />);

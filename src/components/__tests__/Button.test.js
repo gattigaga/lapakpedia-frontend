@@ -27,17 +27,31 @@ describe("Button", () => {
   it("should renders with link", () => {
     const { wrapper } = setup({ href: "https://github.com" });
 
-    expect(toJSON(wrapper)).toMatchSnapshot();
+    expect(wrapper.find("Link").props().to).toEqual("https://github.com");
   });
 
-  it("should renders with custom type, caption and outline mode", () => {
-    const { wrapper } = setup({
-      type: "submit",
-      caption: "Login",
-      isOutlined: true
-    });
+  it("should renders with custom type", () => {
+    const { wrapper } = setup({ type: "submit" });
 
-    expect(toJSON(wrapper)).toMatchSnapshot();
+    expect(wrapper.props().type).toEqual("submit");
+  });
+
+  it("should renders with custom caption", () => {
+    const { wrapper } = setup({ caption: "Login" });
+
+    expect(wrapper.props().children).toEqual("Login");
+  });
+
+  it("should renders with outline", () => {
+    const { wrapper } = setup({ isOutlined: true });
+
+    expect(wrapper.props().isOutlined).toEqual(true);
+  });
+
+  it("should renders in full width", () => {
+    const { wrapper } = setup({ isFullWidth: true });
+
+    expect(wrapper.props().isFullWidth).toEqual(true);
   });
 
   it("should call 'onClick' callback while clicked", () => {
