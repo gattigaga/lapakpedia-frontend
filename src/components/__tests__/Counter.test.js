@@ -25,7 +25,13 @@ describe("Counter", () => {
   });
 
   it("should renders with custom value", () => {
-    const { wrapper } = setup({ value: 99 });
+    const { wrapper } = setup({ value: 10 });
+
+    expect(toJSON(wrapper)).toMatchSnapshot();
+  });
+
+  it("should renders with max value", () => {
+    const { wrapper } = setup({ value: 25, maximum: 25 });
 
     expect(toJSON(wrapper)).toMatchSnapshot();
   });

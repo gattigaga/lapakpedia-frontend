@@ -22,4 +22,13 @@ storiesOf("Counter", module)
       onClickMinus={onClickMinus}
       value={10}
     />
+  ))
+  .add("with maximum value", () => (
+    <Counter
+      onChange={onChange}
+      onClickPlus={onClickPlus}
+      onClickMinus={onClickMinus}
+      value={25}
+      maximum={25}
+    />
   ));

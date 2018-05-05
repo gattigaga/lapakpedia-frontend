@@ -33,13 +33,15 @@ export const Input = styled.input`
   outline: none;
 `;
 
-const Counter = ({ value, onClickPlus, onClickMinus, onChange }) => (
+const Counter = ({ value, maximum, onClickPlus, onClickMinus, onChange }) => (
   <Container>
     <Button onClick={onClickMinus} disabled={value === 1}>
       -
     </Button>
     <Input type="text" value={value} maxLength={2} onChange={onChange} />
-    <Button onClick={onClickPlus}>+</Button>
+    <Button onClick={onClickPlus} disabled={value === maximum}>
+      +
+    </Button>
   </Container>
 );
 
@@ -47,11 +49,13 @@ Counter.propTypes = {
   onClickPlus: PropTypes.func,
   onClickMinus: PropTypes.func,
   onChange: PropTypes.func,
-  value: PropTypes.number
+  value: PropTypes.number,
+  maximum: PropTypes.number
 };
 
 Counter.defaultProps = {
-  value: 1
+  value: 1,
+  maximum: 99
 };
 
 export default Counter;
