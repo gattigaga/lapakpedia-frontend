@@ -27,7 +27,7 @@ describe("Counter", () => {
   it("should renders with custom value", () => {
     const { wrapper } = setup({ value: 99 });
 
-    expect(wrapper.find(Input).props().value).toEqual(99);
+    expect(toJSON(wrapper)).toMatchSnapshot();
   });
 
   it("should calls 'onClickPlus' callback while plus button clicked", () => {

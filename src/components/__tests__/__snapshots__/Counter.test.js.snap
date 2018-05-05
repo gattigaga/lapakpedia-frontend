@@ -2,13 +2,33 @@
 
 exports[`Counter should renders default 1`] = `
 <styled.div>
-  <styled.button>
+  <styled.button
+    disabled={true}
+  >
     -
   </styled.button>
   <styled.input
     maxLength={2}
     type="text"
-    value={0}
+    value={1}
+  />
+  <styled.button>
+    +
+  </styled.button>
+</styled.div>
+`;
+
+exports[`Counter should renders with custom value 1`] = `
+<styled.div>
+  <styled.button
+    disabled={false}
+  >
+    -
+  </styled.button>
+  <styled.input
+    maxLength={2}
+    type="text"
+    value={99}
   />
   <styled.button>
     +

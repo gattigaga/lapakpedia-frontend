@@ -10,14 +10,14 @@ const Container = styled.div`
 `;
 
 export const Button = styled.button`
-  background: black;
-  color: white;
+  background: ${props => (props.disabled ? "white" : "black")};
+  color: ${props => (props.disabled ? "black" : "white")};
   width: 32px;
   height: 100%;
   border: 0px;
   font-family: Roboto;
   font-size: 18px;
-  cursor: pointer;
+  cursor: ${props => (props.disabled ? "not-allowed" : "pointer")};
   outline: none;
   user-select: none;
 `;
@@ -35,7 +35,9 @@ export const Input = styled.input`
 
 const Counter = ({ value, onClickPlus, onClickMinus, onChange }) => (
   <Container>
-    <Button onClick={onClickMinus}>-</Button>
+    <Button onClick={onClickMinus} disabled={value === 1}>
+      -
+    </Button>
     <Input type="text" value={value} maxLength={2} onChange={onChange} />
     <Button onClick={onClickPlus}>+</Button>
   </Container>
@@ -49,7 +51,7 @@ Counter.propTypes = {
 };
 
 Counter.defaultProps = {
-  value: 0
+  value: 1
 };
 
 export default Counter;
