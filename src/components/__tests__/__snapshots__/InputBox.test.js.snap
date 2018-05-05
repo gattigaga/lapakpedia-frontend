@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`InputBox should renders default 1`] = `
+<styled.div>
+  <styled.input
+    placeholder="Placeholder"
+    spellcheck="false"
+  />
+</styled.div>
+`;
+
+exports[`InputBox should renders in error state 1`] = `
+<styled.div>
+  <styled.input
+    isError={true}
+    placeholder="Placeholder"
+    spellcheck="false"
+  />
+  <styled.p
+    isError={true}
+  >
+    It's my helper text
+  </styled.p>
+</styled.div>
+`;
+
+exports[`InputBox should renders with helper text 1`] = `
+<styled.div>
+  <styled.input
+    placeholder="Placeholder"
+    spellcheck="false"
+  />
+  <styled.p>
+    It's my helper text
+  </styled.p>
+</styled.div>
+`;
