@@ -1,0 +1,50 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Product should renders default 1`] = `
+<Styled(Link)
+  to="https://github.com"
+>
+  <styled.div>
+    <styled.img />
+    <styled.div>
+      <styled.h5>
+        MacBook Pro
+      </styled.h5>
+      <styled.p>
+        Technology
+      </styled.p>
+      <styled.p>
+        $ 
+        2,800
+      </styled.p>
+    </styled.div>
+  </styled.div>
+</Styled(Link)>
+`;
+
+exports[`Product should renders in no stock state 1`] = `
+<Styled(Link)
+  to="https://github.com"
+>
+  <styled.div>
+    <styled.img />
+    <styled.div>
+      <styled.h5>
+        MacBook Pro
+      </styled.h5>
+      <styled.p>
+        Technology
+      </styled.p>
+      <styled.p>
+        $ 
+        2,800
+      </styled.p>
+    </styled.div>
+    <styled.div>
+      <styled.p>
+        Out of Stock
+      </styled.p>
+    </styled.div>
+  </styled.div>
+</Styled(Link)>
+`;
