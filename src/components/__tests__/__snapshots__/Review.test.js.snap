@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Review should renders default 1`] = `
+<styled.div>
+  <Avatar
+    alt="Profile"
+    size={48}
+    src="dummy240x240.png"
+  />
+  <styled.div>
+    <Rating
+      isDisabled={true}
+      value={4}
+    />
+    <styled.p>
+      by 
+      markzuckerberg
+      , 
+      06 May 2018, 22.00 pm
+    </styled.p>
+    <styled.p>
+      I love this product
+    </styled.p>
+  </styled.div>
+</styled.div>
+`;
