@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Avatar should renders default 1`] = `
+<styled.img
+  alt="Profile"
+  size={48}
+  src="dummy240x240.png"
+/>
+`;
