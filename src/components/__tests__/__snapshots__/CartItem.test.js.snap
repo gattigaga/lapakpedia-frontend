@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CartItem should renders default 1`] = `
+<styled.div>
+  <styled.img
+    src="dummy240x240.png"
+  />
+  <styled.div>
+    <styled.h5>
+      MacBook Pro 2018
+    </styled.h5>
+    <Counter
+      maximum={15}
+      onChange={[Function]}
+      onClickMinus={[Function]}
+      onClickPlus={[Function]}
+      value={10}
+    />
+  </styled.div>
+  <styled.p>
+    $ 
+    2,800
+  </styled.p>
+  <styled.span
+    onClick={[Function]}
+  >
+    ×
+  </styled.span>
+</styled.div>
+`;
