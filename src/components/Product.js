@@ -4,6 +4,7 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 
 import { toCurrency, cutText } from "helpers/formatter";
+import Rating from "./Rating";
 
 const StyledLink = styled(Link)`
   text-decoration: none;
@@ -23,18 +24,19 @@ const Name = styled.h5`
   text-decoration: none;
 `;
 
-const Category = styled.p`
+const SmallCaption = styled.p`
   font-family: Roboto;
   font-size: 10px;
   color: #aaa;
   margin-top: 4px;
-  margin-bottom: 14px;
+  margin-bottom: 8px;
 `;
 
 const Price = styled.p`
   font-family: Roboto;
   font-size: 16px;
   margin: 0px;
+  margin-top: 14px;
   color: #ff8800;
 `;
 
@@ -66,7 +68,16 @@ const WarnText = styled.p`
   margin: auto;
 `;
 
-const Product = ({ image, name, category, price, href, isNoStock }) => {
+const Product = ({
+  image,
+  name,
+  category,
+  price,
+  href,
+  rating,
+  totalReviews,
+  isNoStock
+}) => {
   const totalWords = name.split(" ").length;
 
   return (
@@ -75,7 +86,9 @@ const Product = ({ image, name, category, price, href, isNoStock }) => {
         <Image src={image} />
         <DetailContainer>
           <Name>{totalWords > 7 ? cutText(name) : name}</Name>
-          <Category>{category}</Category>
+          <SmallCaption>{category}</SmallCaption>
+          <Rating value={rating} isDisabled />
+          <SmallCaption>{totalReviews} reviews</SmallCaption>
           <Price>$ {toCurrency(price)}</Price>
         </DetailContainer>
         {isNoStock && (
@@ -94,6 +107,8 @@ Product.propTypes = {
   category: PropTypes.string,
   price: PropTypes.number,
   href: PropTypes.string,
+  rating: PropTypes.number,
+  totalReviews: PropTypes.number,
   isNoStock: PropTypes.bool
 };
 

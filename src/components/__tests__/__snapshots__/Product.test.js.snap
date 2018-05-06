@@ -13,6 +13,14 @@ exports[`Product should renders default 1`] = `
       <styled.p>
         Technology
       </styled.p>
+      <Rating
+        isDisabled={true}
+        value={4}
+      />
+      <styled.p>
+        4
+         reviews
+      </styled.p>
       <styled.p>
         $ 
         2,800
@@ -34,6 +42,14 @@ exports[`Product should renders in no stock state 1`] = `
       </styled.h5>
       <styled.p>
         Technology
+      </styled.p>
+      <Rating
+        isDisabled={true}
+        value={4}
+      />
+      <styled.p>
+        4
+         reviews
       </styled.p>
       <styled.p>
         $ 

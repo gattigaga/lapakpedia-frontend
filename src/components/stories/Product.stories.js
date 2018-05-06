@@ -1,5 +1,5 @@
 import React from "react";
-import { storiesOf, action } from "@storybook/react";
+import { storiesOf } from "@storybook/react";
 import styled from "styled-components";
 import { MemoryRouter } from "react-router-dom";
 
@@ -33,6 +33,8 @@ storiesOf("Product", module)
       category="Technology"
       price={2800}
       href="https://github.com"
+      rating={4}
+      totalReviews={4}
     />
   ))
   .add("in no stock state", () => (
@@ -42,6 +44,8 @@ storiesOf("Product", module)
       category="Technology"
       price={2800}
       href="https://github.com"
+      rating={4}
+      totalReviews={4}
       isNoStock
     />
   ));
