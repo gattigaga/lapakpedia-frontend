@@ -1,0 +1,86 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Rating should renders default 1`] = `
+<div>
+  <Styled(IoStar)
+    isFilled={true}
+    key="0"
+    onClick={[Function]}
+    onMouseEnter={[Function]}
+    onMouseLeave={[Function]}
+  />
+  <Styled(IoStar)
+    isFilled={true}
+    key="1"
+    onClick={[Function]}
+    onMouseEnter={[Function]}
+    onMouseLeave={[Function]}
+  />
+  <Styled(IoStar)
+    isFilled={true}
+    key="2"
+    onClick={[Function]}
+    onMouseEnter={[Function]}
+    onMouseLeave={[Function]}
+  />
+  <Styled(IoStar)
+    isFilled={false}
+    key="3"
+    onClick={[Function]}
+    onMouseEnter={[Function]}
+    onMouseLeave={[Function]}
+  />
+  <Styled(IoStar)
+    isFilled={false}
+    key="4"
+    onClick={[Function]}
+    onMouseEnter={[Function]}
+    onMouseLeave={[Function]}
+  />
+</div>
+`;
+
+exports[`Rating should renders in disable state 1`] = `
+<div>
+  <Styled(IoStar)
+    isDisabled={true}
+    isFilled={true}
+    key="0"
+    onClick={[Function]}
+    onMouseEnter={[Function]}
+    onMouseLeave={[Function]}
+  />
+  <Styled(IoStar)
+    isDisabled={true}
+    isFilled={true}
+    key="1"
+    onClick={[Function]}
+    onMouseEnter={[Function]}
+    onMouseLeave={[Function]}
+  />
+  <Styled(IoStar)
+    isDisabled={true}
+    isFilled={true}
+    key="2"
+    onClick={[Function]}
+    onMouseEnter={[Function]}
+    onMouseLeave={[Function]}
+  />
+  <Styled(IoStar)
+    isDisabled={true}
+    isFilled={false}
+    key="3"
+    onClick={[Function]}
+    onMouseEnter={[Function]}
+    onMouseLeave={[Function]}
+  />
+  <Styled(IoStar)
+    isDisabled={true}
+    isFilled={false}
+    key="4"
+    onClick={[Function]}
+    onMouseEnter={[Function]}
+    onMouseLeave={[Function]}
+  />
+</div>
+`;
