@@ -21,10 +21,19 @@ const StyledButton = styled.button`
   }
 `;
 
-const Button = ({ caption, type, onClick, href, isOutlined, isFullWidth }) => {
+const Button = ({
+  className,
+  caption,
+  type,
+  onClick,
+  href,
+  isOutlined,
+  isFullWidth
+}) => {
   const button = (
     <StyledButton
       type={type}
+      className={className}
       onClick={onClick}
       isOutlined={isOutlined}
       isFullWidth={isFullWidth}
@@ -42,7 +51,8 @@ Button.propTypes = {
   onClick: PropTypes.func,
   href: PropTypes.string,
   isOutlined: PropTypes.bool,
-  isFullWidth: PropTypes.bool
+  isFullWidth: PropTypes.bool,
+  className: PropTypes.string
 };
 
 Button.defaultProps = {
