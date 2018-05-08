@@ -24,6 +24,12 @@ describe("SearchBar", () => {
     expect(toJSON(wrapper)).toMatchSnapshot();
   });
 
+  it("should renders with keyword", () => {
+    const { wrapper } = setup({ keyword: "MacBook Pro 2018" });
+
+    expect(toJSON(wrapper)).toMatchSnapshot();
+  });
+
   it("should call 'onChange' callback while changed", () => {
     const onChange = jest.fn();
     const { wrapper } = setup({ onChange });

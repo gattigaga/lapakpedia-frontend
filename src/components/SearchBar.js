@@ -13,9 +13,10 @@ const Input = styled.input`
   letter-spacing: 0.1em;
 `;
 
-const SearchBar = ({ onChange, onPressEnter }) => (
+const SearchBar = ({ keyword, onChange, onPressEnter }) => (
   <Input
     type="text"
+    value={keyword}
     onChange={onChange}
     onKeyPress={event => event.key === "Enter" && onPressEnter()}
     placeholder="Search Products"
@@ -24,7 +25,8 @@ const SearchBar = ({ onChange, onPressEnter }) => (
 
 SearchBar.propTypes = {
   onChange: PropTypes.func,
-  onPressEnter: PropTypes.func
+  onPressEnter: PropTypes.func,
+  keyword: PropTypes.string
 };
 
 SearchBar.defaultProps = {

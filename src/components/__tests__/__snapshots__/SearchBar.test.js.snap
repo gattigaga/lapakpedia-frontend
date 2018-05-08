@@ -8,3 +8,13 @@ exports[`SearchBar should renders default 1`] = `
   type="text"
 />
 `;
+
+exports[`SearchBar should renders with keyword 1`] = `
+<styled.input
+  onChange={[Function]}
+  onKeyPress={[Function]}
+  placeholder="Search Products"
+  type="text"
+  value="MacBook Pro 2018"
+/>
+`;
