@@ -72,9 +72,9 @@ class MenuButton extends Component {
           return (
             <Line
               key={index}
-              x1="4px"
+              x1="0%"
               y1={y}
-              x2="28px"
+              x2="100%"
               y2={y}
               innerRef={this.lines[index]}
             />

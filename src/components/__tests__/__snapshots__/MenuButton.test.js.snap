@@ -13,23 +13,23 @@ exports[`MenuButton should renders default 1`] = `
           Object {
             "current": <line
               class="sc-bwzfXH iEmkta"
-              x1="4px"
+              x1="0%"
               y1="8px"
-              x2="28px"
+              x2="100%"
               y2="8px"
           />,
           }
         }
         key="0"
-        x1="4px"
-        x2="28px"
+        x1="0%"
+        x2="100%"
         y1="8px"
         y2="8px"
       >
         <line
           className="sc-bwzfXH iEmkta"
-          x1="4px"
-          x2="28px"
+          x1="0%"
+          x2="100%"
           y1="8px"
           y2="8px"
         />
@@ -39,23 +39,23 @@ exports[`MenuButton should renders default 1`] = `
           Object {
             "current": <line
               class="sc-bwzfXH iEmkta"
-              x1="4px"
+              x1="0%"
               y1="16px"
-              x2="28px"
+              x2="100%"
               y2="16px"
           />,
           }
         }
         key="1"
-        x1="4px"
-        x2="28px"
+        x1="0%"
+        x2="100%"
         y1="16px"
         y2="16px"
       >
         <line
           className="sc-bwzfXH iEmkta"
-          x1="4px"
-          x2="28px"
+          x1="0%"
+          x2="100%"
           y1="16px"
           y2="16px"
         />
@@ -65,23 +65,23 @@ exports[`MenuButton should renders default 1`] = `
           Object {
             "current": <line
               class="sc-bwzfXH iEmkta"
-              x1="4px"
+              x1="0%"
               y1="24px"
-              x2="28px"
+              x2="100%"
               y2="24px"
           />,
           }
         }
         key="2"
-        x1="4px"
-        x2="28px"
+        x1="0%"
+        x2="100%"
         y1="24px"
         y2="24px"
       >
         <line
           className="sc-bwzfXH iEmkta"
-          x1="4px"
-          x2="28px"
+          x1="0%"
+          x2="100%"
           y1="24px"
           y2="24px"
         />
