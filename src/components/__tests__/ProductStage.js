@@ -1,7 +1,6 @@
 import React from "react";
 import { shallow } from "enzyme";
 import toJSON from "enzyme-to-json";
-import uuid from "uuid/v4";
 
 import ProductStage from "components/ProductStage";
 
@@ -10,7 +9,7 @@ describe("ProductStage", () => {
 
   const setup = propOverrides => {
     const product = {
-      _id: uuid(),
+      _id: "72d4dc1b-2238-4550-b3fa-0d589fa1047f",
       image: require("assets/images/dummy240x240.png"),
       name: "MacBook Pro",
       category: "Technology",
