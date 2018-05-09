@@ -8,10 +8,11 @@ const Text = styled.h1`
   margin: 0px;
 `;
 
-const Logo = ({ fontSize }) => <Text fontSize={fontSize}>Lapakpedia</Text>;
+const Logo = props => <Text {...props}>Lapakpedia</Text>;
 
 Logo.propTypes = {
-  fontSize: PropTypes.number
+  fontSize: PropTypes.number,
+  className: PropTypes.string
 };
 
 Logo.defaultProps = {
