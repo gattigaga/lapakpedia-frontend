@@ -1,0 +1,78 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ProductStage should renders default 1`] = `
+<styled.div>
+  <styled.header>
+    <styled.span>
+      New Arrival
+    </styled.span>
+    <Styled(Link)
+      to="https://lapakpedia.com/products"
+    >
+      View All &gt;
+    </Styled(Link)>
+  </styled.header>
+  <styled.div>
+    <styled.div
+      key="72d4dc1b-2238-4550-b3fa-0d589fa1047f"
+      position="left"
+    >
+      <Product
+        _id="72d4dc1b-2238-4550-b3fa-0d589fa1047f"
+        category="Technology"
+        href="#"
+        image="dummy240x240.png"
+        name="MacBook Pro"
+        price={2800}
+        rating={4}
+        totalReviews={4}
+      />
+    </styled.div>
+    <styled.div
+      key="72d4dc1b-2238-4550-b3fa-0d589fa1047f"
+      position="center"
+    >
+      <Product
+        _id="72d4dc1b-2238-4550-b3fa-0d589fa1047f"
+        category="Technology"
+        href="#"
+        image="dummy240x240.png"
+        name="MacBook Pro"
+        price={2800}
+        rating={4}
+        totalReviews={4}
+      />
+    </styled.div>
+    <styled.div
+      key="72d4dc1b-2238-4550-b3fa-0d589fa1047f"
+      position="center"
+    >
+      <Product
+        _id="72d4dc1b-2238-4550-b3fa-0d589fa1047f"
+        category="Technology"
+        href="#"
+        image="dummy240x240.png"
+        name="MacBook Pro"
+        price={2800}
+        rating={4}
+        totalReviews={4}
+      />
+    </styled.div>
+    <styled.div
+      key="72d4dc1b-2238-4550-b3fa-0d589fa1047f"
+      position="right"
+    >
+      <Product
+        _id="72d4dc1b-2238-4550-b3fa-0d589fa1047f"
+        category="Technology"
+        href="#"
+        image="dummy240x240.png"
+        name="MacBook Pro"
+        price={2800}
+        rating={4}
+        totalReviews={4}
+      />
+    </styled.div>
+  </styled.div>
+</styled.div>
+`;
