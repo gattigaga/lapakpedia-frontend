@@ -59,7 +59,7 @@ const ProductStage = ({ products, label, link }) => (
 
         return (
           <Column key={product._id} position={position}>
-            <Product {...product} href="#" />
+            <Product {...product} />
           </Column>
         );
       })}
