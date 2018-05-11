@@ -191,22 +191,21 @@ class PaginationButton extends Component {
 
   render() {
     const { isDisabled, type, href } = this.props;
-
-    return (
-      <Link to={isDisabled ? "#" : href}>
-        <Container
-          isDisabled={isDisabled}
-          onMouseEnter={() => !isDisabled && this.handleAnimation(true)}
-          onMouseLeave={() => !isDisabled && this.handleAnimation(false)}
-        >
-          <Layer isDisabled={isDisabled} />
-          {this.createLines()}
-          <Label x="50%" y="52%" innerRef={this.label} isDisabled={isDisabled}>
-            {capitalize(type)}
-          </Label>
-        </Container>
-      </Link>
+    const content = (
+      <Container
+        isDisabled={isDisabled}
+        onMouseEnter={() => !isDisabled && this.handleAnimation(true)}
+        onMouseLeave={() => !isDisabled && this.handleAnimation(false)}
+      >
+        <Layer isDisabled={isDisabled} />
+        {this.createLines()}
+        <Label x="50%" y="52%" innerRef={this.label} isDisabled={isDisabled}>
+          {capitalize(type)}
+        </Label>
+      </Container>
     );
+
+    return isDisabled ? content : <Link to={href}>{content}</Link>;
   }
 }
 
