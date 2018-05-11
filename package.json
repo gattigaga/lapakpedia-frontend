@@ -10,6 +10,7 @@
     "lodash": "^4.17.10",
     "normalize.css": "^8.0.0",
     "prop-types": "^15.6.1",
+    "query-string": "^6.1.0",
     "react": "^16.3.2",
     "react-dom": "^16.3.2",
     "react-icons": "^2.2.7",
