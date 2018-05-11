@@ -8,7 +8,7 @@ import { capitalize } from "helpers/formatter";
 
 const Container = styled.svg`
   width: 80px;
-  height: 42px;
+  height: 36px;
   cursor: ${props => (props.isDisabled ? "not-allowed" : "pointer")};
 `;
 
@@ -22,7 +22,7 @@ const Layer = styled.rect`
 
 const Label = styled.text`
   font-family: Roboto;
-  font-size: 14px;
+  font-size: 12px;
   letter-spacing: 0.1em;
   fill: ${props => (props.isDisabled ? "black" : "white")};
   text-anchor: middle;
