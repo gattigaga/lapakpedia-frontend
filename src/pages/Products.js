@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import styled from "styled-components";
 import axios from "axios";
 import queryString from "query-string";
+import { map } from "lodash/fp";
 
 import config from "config/app";
 import Product from "components/Product";
@@ -85,18 +86,49 @@ class Products extends Component {
       const isHasNextPage = responseNextProducts.data.length > 0;
       const categories = responseCategories.data;
 
-      const isMatch = product => category => category._id === product.category;
-      const relate = product => ({
-        ...product,
-        image: `${config.baseURL}/public/images/products/${product.photo}`,
-        href: `/products/${product._id}`,
-        category: categories.find(isMatch(product)).name
-      });
+      const sum = (total, { rate }) => total + rate;
+      const getData = ({ data }) => data;
+      const getPurchasePromise = product =>
+        axios.get(`/purchases?productID=${product._id}`);
+      const isCategoryMatch = product => category =>
+        category._id === product.category;
+      const isPurchaseMatch = product => purchases => {
+        const totalPurchases = purchases.length;
+
+        if (totalPurchases > 0) {
+          return product._id === purchases[0].product;
+        }
+
+        return false;
+      };
+      const relate = (categories, purchases) => product => {
+        const category = categories.find(isCategoryMatch(product)).name;
+        const reviews = purchases.find(isPurchaseMatch(product)) || [];
+        const totalRating = reviews.reduce(sum, 0);
+        const totalReviews = reviews.length;
+        const rating = totalRating / totalReviews;
+
+        return {
+          ...product,
+          category,
+          totalReviews,
+          rating: isNaN(rating) ? 0 : rating,
+          image: `${config.baseURL}/public/images/products/${product.photo}`,
+          href: `/products/${product._id}`
+        };
+      };
+
+      const purchasePromises = products.map(getPurchasePromise);
+
+      const responsePurchases = await Promise.all(purchasePromises);
+      const purchases = responsePurchases.map(getData);
+
+      const withRelation = map(relate(categories, purchases));
 
       this.setState({
         isHasNextPage,
         isLoading: false,
-        products: products.map(relate)
+        products: withRelation(products)
       });
     } catch (error) {
       this.setState({ isLoading: false }, () => console.error(error));
