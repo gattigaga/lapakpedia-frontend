@@ -7,4 +7,7 @@ const onClick = action("clicked");
 
 storiesOf("Rating", module)
   .add("default", () => <Rating onClick={onClick} value={3} />)
-  .add("in disable state", () => <Rating value={2} isDisabled />);
+  .add("in disable state", () => <Rating value={2} isDisabled />)
+  .add("with custom size", () => (
+    <Rating onClick={onClick} value={4} size={32} />
+  ));

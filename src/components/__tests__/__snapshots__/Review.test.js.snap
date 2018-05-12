@@ -10,6 +10,7 @@ exports[`Review should renders default 1`] = `
   <styled.div>
     <Rating
       isDisabled={true}
+      size={14}
       value={4}
     />
     <styled.p>

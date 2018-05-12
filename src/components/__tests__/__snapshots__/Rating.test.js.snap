@@ -8,6 +8,7 @@ exports[`Rating should renders default 1`] = `
     onClick={[Function]}
     onMouseEnter={[Function]}
     onMouseLeave={[Function]}
+    size={14}
   />
   <Styled(IoStar)
     isFilled={true}
@@ -15,6 +16,7 @@ exports[`Rating should renders default 1`] = `
     onClick={[Function]}
     onMouseEnter={[Function]}
     onMouseLeave={[Function]}
+    size={14}
   />
   <Styled(IoStar)
     isFilled={true}
@@ -22,6 +24,7 @@ exports[`Rating should renders default 1`] = `
     onClick={[Function]}
     onMouseEnter={[Function]}
     onMouseLeave={[Function]}
+    size={14}
   />
   <Styled(IoStar)
     isFilled={false}
@@ -29,6 +32,7 @@ exports[`Rating should renders default 1`] = `
     onClick={[Function]}
     onMouseEnter={[Function]}
     onMouseLeave={[Function]}
+    size={14}
   />
   <Styled(IoStar)
     isFilled={false}
@@ -36,6 +40,7 @@ exports[`Rating should renders default 1`] = `
     onClick={[Function]}
     onMouseEnter={[Function]}
     onMouseLeave={[Function]}
+    size={14}
   />
 </div>
 `;
@@ -49,6 +54,7 @@ exports[`Rating should renders in disable state 1`] = `
     onClick={[Function]}
     onMouseEnter={[Function]}
     onMouseLeave={[Function]}
+    size={14}
   />
   <Styled(IoStar)
     isDisabled={true}
@@ -57,6 +63,7 @@ exports[`Rating should renders in disable state 1`] = `
     onClick={[Function]}
     onMouseEnter={[Function]}
     onMouseLeave={[Function]}
+    size={14}
   />
   <Styled(IoStar)
     isDisabled={true}
@@ -65,6 +72,7 @@ exports[`Rating should renders in disable state 1`] = `
     onClick={[Function]}
     onMouseEnter={[Function]}
     onMouseLeave={[Function]}
+    size={14}
   />
   <Styled(IoStar)
     isDisabled={true}
@@ -73,6 +81,7 @@ exports[`Rating should renders in disable state 1`] = `
     onClick={[Function]}
     onMouseEnter={[Function]}
     onMouseLeave={[Function]}
+    size={14}
   />
   <Styled(IoStar)
     isDisabled={true}
@@ -81,6 +90,52 @@ exports[`Rating should renders in disable state 1`] = `
     onClick={[Function]}
     onMouseEnter={[Function]}
     onMouseLeave={[Function]}
+    size={14}
+  />
+</div>
+`;
+
+exports[`Rating should renders with custom size 1`] = `
+<div>
+  <Styled(IoStar)
+    isFilled={true}
+    key="0"
+    onClick={[Function]}
+    onMouseEnter={[Function]}
+    onMouseLeave={[Function]}
+    size={32}
+  />
+  <Styled(IoStar)
+    isFilled={true}
+    key="1"
+    onClick={[Function]}
+    onMouseEnter={[Function]}
+    onMouseLeave={[Function]}
+    size={32}
+  />
+  <Styled(IoStar)
+    isFilled={true}
+    key="2"
+    onClick={[Function]}
+    onMouseEnter={[Function]}
+    onMouseLeave={[Function]}
+    size={32}
+  />
+  <Styled(IoStar)
+    isFilled={false}
+    key="3"
+    onClick={[Function]}
+    onMouseEnter={[Function]}
+    onMouseLeave={[Function]}
+    size={32}
+  />
+  <Styled(IoStar)
+    isFilled={false}
+    key="4"
+    onClick={[Function]}
+    onMouseEnter={[Function]}
+    onMouseLeave={[Function]}
+    size={32}
   />
 </div>
 `;

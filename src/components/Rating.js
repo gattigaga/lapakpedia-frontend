@@ -5,6 +5,7 @@ import Star from "react-icons/lib/io/star";
 
 export const StyledStar = styled(Star)`
   color: ${props => (props.isFilled ? "#ff8800" : "#bbb")};
+  font-size: ${props => props.size}px;
   ${props => !props.isDisabled && "cursor: pointer"};
 `;
 
@@ -31,7 +32,7 @@ class Rating extends Component {
 
   render() {
     const { hoveredValue } = this.state;
-    const { value, onClick, isDisabled } = this.props;
+    const { value, size, onClick, isDisabled } = this.props;
 
     return (
       <div>
@@ -40,6 +41,7 @@ class Rating extends Component {
 
           return (
             <StyledStar
+              size={size}
               key={index}
               isFilled={newValue <= hoveredValue}
               isDisabled={isDisabled}
@@ -57,7 +59,12 @@ class Rating extends Component {
 Rating.propTypes = {
   value: PropTypes.number,
   onClick: PropTypes.func,
-  isDisabled: PropTypes.bool
+  isDisabled: PropTypes.bool,
+  size: PropTypes.number
+};
+
+Rating.defaultProps = {
+  size: 14
 };
 
 export default Rating;

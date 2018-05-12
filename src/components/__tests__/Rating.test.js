@@ -32,6 +32,12 @@ describe("Rating", () => {
     expect(toJSON(wrapper)).toMatchSnapshot();
   });
 
+  it("should renders with custom size", () => {
+    const { wrapper } = setup({ size: 32 });
+
+    expect(toJSON(wrapper)).toMatchSnapshot();
+  });
+
   it("should calls 'onClick' callback while a star clicked", () => {
     const { props, wrapper } = setup();
     const value = 4;
