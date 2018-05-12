@@ -20,6 +20,14 @@ class Rating extends Component {
     this.handleHover = this.handleHover.bind(this);
   }
 
+  componentWillReceiveProps(nextProps) {
+    const { value } = this.props;
+
+    if (value !== nextProps.value) {
+      this.setState({ hoveredValue: nextProps.value });
+    }
+  }
+
   /**
    * Handle hovered star value
    *
