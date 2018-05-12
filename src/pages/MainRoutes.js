@@ -8,6 +8,7 @@ import MenuButton from "components/MenuButton";
 import SearchBar from "components/SearchBar";
 import Home from "./Home";
 import Products from "./Products";
+import ProductDetail from "./ProductDetail";
 
 const Container = styled.div`
   width: 100%;
@@ -88,7 +89,8 @@ class MainRoutes extends Component {
         </Header>
         <Switch>
           <Route path="/" component={Home} exact />
-          <Route path="/products" component={Products} />
+          <Route path="/products" component={Products} exact />
+          <Route path="/products/:id" component={ProductDetail} />
         </Switch>
       </Container>
     );
