@@ -45,7 +45,7 @@ class Rating extends Component {
               key={index}
               isFilled={newValue <= hoveredValue}
               isDisabled={isDisabled}
-              onClick={() => onClick(newValue)}
+              onClick={() => !isDisabled && onClick(newValue)}
               onMouseEnter={() => !isDisabled && this.handleHover(newValue)}
               onMouseLeave={() => !isDisabled && this.handleHover(value)}
             />
