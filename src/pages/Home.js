@@ -50,33 +50,65 @@ class Home extends Component {
       const favourites = responseFavourites.data;
       const categories = responseCategories.data;
 
+      const sum = (total, { rate }) => total + rate;
       const valueInDesc = ({ length }) => -length;
       const getProductID = favourites => favourites[0].product;
-      const getPromise = productID => axios.get(`/products/${productID}`);
+      const getProductPromise = id => axios.get(`/products/${id}`);
+      const getPurchasePromise = product =>
+        axios.get(`/purchases?productID=${product._id}`);
       const getData = ({ data }) => data;
-      const isMatch = product => category => category._id === product.category;
-      const relate = product => ({
-        ...product,
-        image: `${config.baseURL}/public/images/products/${product.photo}`,
-        href: `/products/${product._id}`,
-        category: categories.find(isMatch(product)).name
-      });
-      const getTop4Favourites = compose(
+      const isCategoryMatch = product => category =>
+        category._id === product.category;
+      const isPurchaseMatch = product => purchases => {
+        const totalPurchases = purchases.length;
+
+        if (totalPurchases > 0) {
+          return product._id === purchases[0].product;
+        }
+
+        return false;
+      };
+      const relate = (categories, purchases) => product => {
+        const category = categories.find(isCategoryMatch(product)).name;
+        const reviews = purchases.find(isPurchaseMatch(product)) || [];
+        const totalRating = reviews.reduce(sum, 0);
+        const totalReviews = reviews.length;
+        const rating = totalRating / totalReviews;
+
+        return {
+          ...product,
+          category,
+          totalReviews,
+          rating: isNaN(rating) ? 0 : rating,
+          image: `${config.baseURL}/public/images/products/${product.photo}`,
+          href: `/products/${product._id}`
+        };
+      };
+
+      const getTop4Products = compose(
+        map(getProductPromise),
+        map(getProductID),
         slice(0, 4),
         sortBy(valueInDesc),
         groupBy("product")
       );
-      const getProductPromises = compose(map(getPromise), map(getProductID));
-      const getTop4Products = compose(getProductPromises, getTop4Favourites);
 
       const responseFavouriteProducts = await Promise.all(
         getTop4Products(favourites)
       );
       const favouriteProducts = responseFavouriteProducts.map(getData);
 
+      const products = [...latestProducts, ...favouriteProducts];
+      const purchasePromises = products.map(getPurchasePromise);
+
+      const responsePurchases = await Promise.all(purchasePromises);
+      const purchases = responsePurchases.map(getData);
+
+      const withRelation = map(relate(categories, purchases));
+
       this.setState({
-        latestProducts: latestProducts.map(relate),
-        favouriteProducts: favouriteProducts.map(relate),
+        latestProducts: withRelation(latestProducts),
+        favouriteProducts: withRelation(favouriteProducts),
         isLoading: false
       });
     } catch (error) {
