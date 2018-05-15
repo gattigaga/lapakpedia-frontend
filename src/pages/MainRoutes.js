@@ -1,11 +1,13 @@
-import React, { Component } from "react";
+import React, { Component, createRef } from "react";
 import styled from "styled-components";
 import { Switch, Route } from "react-router-dom";
+import { TweenLite, Power4 } from "gsap";
 
 import Button from "components/Button";
 import Logo from "components/Logo";
 import MenuButton from "components/MenuButton";
 import SearchBar from "components/SearchBar";
+import SideMenu from "components/SideMenu";
 import Home from "./Home";
 import Products from "./Products";
 import ProductDetail from "./ProductDetail";
@@ -13,6 +15,11 @@ import ProductDetail from "./ProductDetail";
 const Container = styled.div`
   width: 100%;
   min-height: 100vh;
+  overflow-x: hidden;
+`;
+
+const Wrapper = styled.div`
+  width: 100%;
 `;
 
 const Header = styled.header`
@@ -45,12 +52,11 @@ class MainRoutes extends Component {
     super(props);
 
     this.state = {
-      isMenuOpen: false,
-      keyword: ""
+      isMenuOpen: false
     };
 
+    this.wrapper = createRef();
     this.handleMenu = this.handleMenu.bind(this);
-    this.updateKeyword = this.updateKeyword.bind(this);
   }
 
   /**
@@ -59,39 +65,74 @@ class MainRoutes extends Component {
    * @memberof MainRoutes
    */
   handleMenu() {
-    this.setState(prevState => ({
-      isMenuOpen: !prevState.isMenuOpen
-    }));
-  }
+    this.setState(
+      prevState => ({
+        isMenuOpen: !prevState.isMenuOpen
+      }),
+      () => {
+        const { isMenuOpen } = this.state;
+        const distance = 280;
 
-  /**
-   * Update search keyword
-   *
-   * @param {object} event - DOM event
-   * @memberof MainRoutes
-   */
-  updateKeyword(event) {
-    this.setState({ keyword: event.target.value });
+        TweenLite.fromTo(
+          this.wrapper.current,
+          0.6,
+          {
+            ease: Power4.easeIn,
+            x: isMenuOpen ? 0 : distance
+          },
+          {
+            ease: Power4.easeIn,
+            x: isMenuOpen ? distance : 0
+          }
+        );
+      }
+    );
   }
 
   render() {
-    const { isMenuOpen, keyword } = this.state;
+    const { isMenuOpen } = this.state;
+
+    const items = [
+      {
+        label: "Home",
+        url: "/"
+      },
+      {
+        label: "Products",
+        url: "/products"
+      },
+      {
+        label: "Payment",
+        url: "/payment"
+      },
+      {
+        label: "Contact",
+        url: "/contact"
+      },
+      {
+        label: "About",
+        url: "/about"
+      }
+    ];
 
     return (
       <Container>
-        <Header>
-          <MenuButton isOpen={isMenuOpen} onClick={this.handleMenu} />
-          <StyledLogo />
-          <SideContainer>
-            <StyledButton caption="Register" isOutlined />
-            <StyledButton caption="Login" />
-          </SideContainer>
-        </Header>
-        <Switch>
-          <Route path="/" component={Home} exact />
-          <Route path="/products" component={Products} exact />
-          <Route path="/products/:id" component={ProductDetail} />
-        </Switch>
+        <SideMenu items={items} isOpen={isMenuOpen} />
+        <Wrapper innerRef={this.wrapper}>
+          <Header>
+            <MenuButton isOpen={isMenuOpen} onClick={this.handleMenu} />
+            <StyledLogo />
+            <SideContainer>
+              <StyledButton caption="Register" isOutlined />
+              <StyledButton caption="Login" />
+            </SideContainer>
+          </Header>
+          <Switch>
+            <Route path="/" component={Home} exact />
+            <Route path="/products" component={Products} exact />
+            <Route path="/products/:id" component={ProductDetail} />
+          </Switch>
+        </Wrapper>
       </Container>
     );
   }

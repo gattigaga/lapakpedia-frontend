@@ -1,0 +1,42 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SideMenu should renders default 1`] = `
+<styled.div
+  innerRef={
+    Object {
+      "current": null,
+    }
+  }
+>
+  <styled.ul>
+    <styled.li
+      innerRef={
+        Object {
+          "current": null,
+        }
+      }
+      key="0"
+    >
+      <Styled(Link)
+        to="/home"
+      >
+        Home
+      </Styled(Link)>
+    </styled.li>
+    <styled.li
+      innerRef={
+        Object {
+          "current": null,
+        }
+      }
+      key="1"
+    >
+      <Styled(Link)
+        to="/about"
+      >
+        About
+      </Styled(Link)>
+    </styled.li>
+  </styled.ul>
+</styled.div>
+`;
