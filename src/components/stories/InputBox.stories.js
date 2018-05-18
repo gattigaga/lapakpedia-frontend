@@ -13,20 +13,20 @@ const Container = styled.div`
 storiesOf("InputBox", module)
   .addDecorator(story => <Container>{story()}</Container>)
   .add("default (type text)", () => (
-    <InputBox onChange={onChange} label="Username" value="username99" />
+    <InputBox onChange={onChange} placeholder="Username" value="username99" />
   ))
   .add("with type password", () => (
     <InputBox
       type="password"
       onChange={onChange}
-      label="Password"
+      placeholder="Password"
       value="secret"
     />
   ))
   .add("in disabled state", () => (
     <InputBox
       onChange={onChange}
-      label="Username"
+      placeholder="Username"
       value="it's disabled"
       helperText="it should contains alphanumeric and symbol"
       isDisabled
@@ -35,7 +35,7 @@ storiesOf("InputBox", module)
   .add("in error state", () => (
     <InputBox
       onChange={onChange}
-      label="Username"
+      placeholder="Username"
       value="it's error"
       helperText="it should contains alphanumeric and symbol"
       isError
@@ -44,7 +44,7 @@ storiesOf("InputBox", module)
   .add("with helper text", () => (
     <InputBox
       onChange={onChange}
-      label="Username"
+      placeholder="Username"
       value="it's helper text"
       helperText="it should contains alphanumeric and symbol"
     />
