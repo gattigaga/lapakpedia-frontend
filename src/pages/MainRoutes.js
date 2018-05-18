@@ -6,11 +6,11 @@ import { TweenLite, Power4 } from "gsap";
 import Button from "components/Button";
 import Logo from "components/Logo";
 import MenuButton from "components/MenuButton";
-import SearchBar from "components/SearchBar";
 import SideMenu from "components/SideMenu";
 import Home from "./Home";
 import Products from "./Products";
 import ProductDetail from "./ProductDetail";
+import Login from "./Login";
 
 const Container = styled.div`
   width: 100%;
@@ -20,6 +20,10 @@ const Container = styled.div`
 
 const Wrapper = styled.div`
   width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-flow: column;
+  flex-direction: column;
 `;
 
 const Header = styled.header`
@@ -124,11 +128,12 @@ class MainRoutes extends Component {
             <StyledLogo />
             <SideContainer>
               <StyledButton caption="Register" isOutlined />
-              <StyledButton caption="Login" />
+              <StyledButton caption="Login" href="/login" />
             </SideContainer>
           </Header>
           <Switch>
             <Route path="/" component={Home} exact />
+            <Route path="/login" component={Login} />
             <Route path="/products" component={Products} exact />
             <Route path="/products/:id" component={ProductDetail} />
           </Switch>
